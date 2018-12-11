@@ -5,15 +5,15 @@
     <title>Tienda Virtual</title>
     <link rel="stylesheet" type="text/css" href="StyleSheet1.css" />
 </head>
-<body ng-controller="ProductosController as prods">
+<body ng-controller="ProductosController">
     <p class="login" ng-click="">Ingresar</p>
     <p class="login" ng-click="">Registrarse</p>
     <h1 id="titulo" class="center">Tienda Virtual</h1>
-    <div id="producto" ng-repeat="producto in prods.productos">
-        <h1 class="center">{{producto.nombre}}</h1>
-        <h2 id="descripcion">{{producto.descripcion}}</h2>
+    <div id="producto" ng-repeat="producto in productos">
+        <h1 class="center">{{producto.Nombre}}</h1>
+        <h2 id="descripcion">{{producto.Descripcion}}</h2>
         <div><img class="center" src="https://upload.wikimedia.org/wikipedia/commons/d/da/Imagen_no_disponible.svg" alt="Imagen no disponible" height="150" width="150"></div>
-        <p id="precio" class="center">Precio: ${{producto.precio}}</p>
+        <p id="precio" class="center">Precio: ${{producto.Precio}}</p>
         <button class="center" type="button">Comprar</button>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
