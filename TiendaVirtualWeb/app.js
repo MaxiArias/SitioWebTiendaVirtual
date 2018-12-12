@@ -3,7 +3,7 @@
 
     app.controller('ProductosController', function ($scope, $http) {
         $scope.productos = prods;
-        $http.get("http://35.185.15.6/WebApi/api/Producto").then(function successCallback(response) {
+        $http.get("http://localhost:49559/api/producto").then(function successCallback(response) {
             alert("success");
         }, function errorCallback(response) {
             alert(response.status);
