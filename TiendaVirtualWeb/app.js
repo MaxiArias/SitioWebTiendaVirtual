@@ -1,16 +1,18 @@
 ﻿(function () {
     var app = angular.module('productos', []);
 
-    app.controller('ProductosController', function ($scope, $http) {
-        $scope.productos = prods;
-        $http.get("http://localhost:49559/api/producto").then(function successCallback(response) {
-            alert("success");
-        }, function errorCallback(response) {
-            alert(response.status);
-        });
+    app.controller('ProductoController', function ($scope, $http) {
+        //$scope.productos = prods;
+        $scope.productos = function () {
+            $http.get("http://35.185.15.6/WebApi/api/Producto").then(function successCallback(response) {
+                alert("success");
+            }, function errorCallback(response) {
+                alert(response.status);
+            });
+        };
     });
 
-    var prods = [
+    /*var prods = [
         {
             "IdProducto": 1,
             "Nombre": "Laptop HP",
@@ -38,10 +40,10 @@
             "Nombre": "PC",
             "Descripcion": "Computadora Personal incluye monitor,teclado y mouse",
             "Foto": "PC.jpg",
-            "Precio": 28000,
+            "Precio": 2800,
             "Stock": 700,
             "FechaAlta": "2018-12-09T00:00:00",
             "Habilitado": true,
             "IdCategoria": 12
-        }];
+        }];*/
 })();
