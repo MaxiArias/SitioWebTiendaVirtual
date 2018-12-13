@@ -9,7 +9,7 @@
     <p class="login" ng-click="">Ingresar</p>
     <p class="login" ng-click="">Registrarse</p>
     <h1 id="titulo" class="center">Tienda Virtual</h1>
-    <div id="producto" ng-repeat="producto in productos">
+    <div id="producto" ng-repeat="producto in productos1">
         <h1 class="center">{{producto.Nombre}}</h1>
         <h2 id="descripcion">{{producto.Descripcion}}</h2>
         <div><img class="center" src="https://upload.wikimedia.org/wikipedia/commons/d/da/Imagen_no_disponible.svg" alt="Imagen no disponible" height="150" width="150"></div>
@@ -17,6 +17,7 @@
         <button class="center" type="button">Comprar</button>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <!--<script src="https://code.angularjs.org/2.0.0-beta.7/Rx.js"></script>-->
     <script type="text/javascript" src="/app.js"></script>
 </body>
 </html>

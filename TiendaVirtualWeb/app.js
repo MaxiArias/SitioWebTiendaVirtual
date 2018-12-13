@@ -1,16 +1,17 @@
 ﻿(function () {
-    var app = angular.module('productos', []);
+    var app = angular.module("productos", []);
 
-    app.controller('ProductosController', function ($scope, $http) {
-        $scope.productos = prods;
+    app.controller("ProductosController", function ($scope, $http) {
+        //$scope.productos = prods;
         $http.get("http://localhost:49559/api/producto").then(function successCallback(response) {
+            $scope.productos1 = response.data;
             alert("success");
         }, function errorCallback(response) {
             alert(response.status);
         });
     });
 
-    var prods = [
+    /*var prods = [
         {
             "IdProducto": 1,
             "Nombre": "Laptop HP",
@@ -43,5 +44,5 @@
             "FechaAlta": "2018-12-09T00:00:00",
             "Habilitado": true,
             "IdCategoria": 12
-        }];
+        }];*/
 })();
