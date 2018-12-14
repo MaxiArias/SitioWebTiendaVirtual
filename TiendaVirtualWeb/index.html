@@ -3,21 +3,66 @@
 <head>
     <meta charset="utf-8" />
     <title>Tienda Virtual</title>
-    <link rel="stylesheet" type="text/css" href="StyleSheet1.css" />
+    <link rel="stylesheet" type="text/css" href="stylesheet1.css" />
 </head>
-<body ng-controller="ProductosController">
-    <p class="login" ng-click="">Ingresar</p>
-    <p class="login" ng-click="">Registrarse</p>
-    <h1 id="titulo" class="center">Tienda Virtual</h1>
-    <div id="producto" ng-repeat="producto in productos1">
-        <h1 class="center">{{producto.Nombre}}</h1>
-        <h2 id="descripcion">{{producto.Descripcion}}</h2>
-        <div><img class="center" src="https://upload.wikimedia.org/wikipedia/commons/d/da/Imagen_no_disponible.svg" alt="Imagen no disponible" height="150" width="150"></div>
-        <p id="precio" class="center">Precio: ${{producto.Precio}}</p>
-        <button class="center" type="button">Comprar</button>
+<body>
+
+    <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Ingresar</button>
+
+    <div id="id01" class="modal">
+
+        <form class="modal-content animate" action="/action_page.php">
+            <div class="imgcontainer">
+                <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+            </div>
+
+            <div class="container">
+                <label for="uname"><b>Mail</b></label>
+                <input type="text" placeholder="Ingrese mail" name="uname" required>
+
+                <label for="psw"><b>Contrasenia</b></label>
+                <input type="password" placeholder="Ingrese contrasenia" name="psw" required>
+
+                <button type="submit">Login</button>
+                <label>
+                    <input type="checkbox" checked="checked" name="remember"> Remember me
+                </label>
+            </div>
+
+            <div class="container" style="background-color:#f1f1f1">
+                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById('id01');
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+    <!--<div ng-controller="LoginController">
+        <p class="login" ng-click="">Ingresar</p>
+        <p class="login" ng-click="">Registrarse</p>
+    </div>-->
+    <div ng-controller="ProductosController">
+        <h1 id="titulo" class="center">Tienda Virtual</h1>
+        <div id="producto" ng-repeat="producto in productos1">
+            <h1 class="center">{{producto.Nombre}}</h1>
+            <h2 id="descripcion">{{producto.Descripcion}}</h2>
+            <div><img class="center" src="https://upload.wikimedia.org/wikipedia/commons/d/da/Imagen_no_disponible.svg" alt="Imagen no disponible" height="150" width="150"></div>
+            <p id="precio" class="center">Precio: ${{producto.Precio}}</p>
+            <button class="center" type="button">Comprar</button>
+        </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-    <!--<script src="https://code.angularjs.org/2.0.0-beta.7/Rx.js"></script>-->
     <script type="text/javascript" src="/app.js"></script>
+
 </body>
 </html>
