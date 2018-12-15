@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html ng-app="productos">
+<html ng-app="productos" ng-init="id=0">
 <head>
     <meta charset="utf-8" />
     <title>Tienda Virtual</title>
@@ -9,24 +9,26 @@
 
     <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Ingresar</button>
 
+    <p>Id:{{id}}</p>
+
     <div id="id01" class="modal">
 
-        <form class="modal-content animate" action="/action_page.php">
+        <form class="modal-content animate"><!--action="/action_page.php">-->
             <div class="imgcontainer">
                 <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
             </div>
 
             <div class="container">
                 <label for="uname"><b>Mail</b></label>
-                <input type="text" placeholder="Ingrese mail" name="uname" required>
+                <input type="text" placeholder="Ingrese mail" ng-model="mail"/>
 
-                <label for="psw"><b>Contrasenia</b></label>
-                <input type="password" placeholder="Ingrese contrasenia" name="psw" required>
+                <label for="psw"><b>Contraseña</b></label>
+                <input type="password" placeholder="Ingrese contraseña" ng-model="contrasenia"/>
 
-                <button type="submit">Login</button>
-                <label>
+                <button type="submit" ng-controller="LoginController" ng-click="Login()">Ingresar</button>
+                <!--<label>
                     <input type="checkbox" checked="checked" name="remember"> Remember me
-                </label>
+                </label>-->
             </div>
 
             <div class="container" style="background-color:#f1f1f1">
@@ -34,18 +36,6 @@
             </div>
         </form>
     </div>
-
-    <script>
-        // Get the modal
-        var modal = document.getElementById('id01');
-
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function (event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-    </script>
 
     <!--<div ng-controller="LoginController">
         <p class="login" ng-click="">Ingresar</p>
