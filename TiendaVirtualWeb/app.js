@@ -10,11 +10,12 @@
         });
     });
 
-    app.controller("LoginController", function ($scope, $http) {
+    app.controller("LoginController", function ($scope, $rootScope, $http) {
         $scope.Login = function () {
-            var parameter = JSON.stringify({ mail: "juan@prueba.com", password: "123456" });
+            var parameter = JSON.stringify({ mail: $scope.mail, password: $scope.password });
             $http.post("http://35.185.15.6/WebApi/api/Usuario/Login", parameter).then(function successCallback(response) {
-                alert(response.data);
+                $rootScope.id = response.data;
+                modal.style.display = 'none';
             }, function errorCallback(response) {
                 alert(response.statusText);
             });

@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html ng-app="productos" ng-init="id=0">
+<html ng-app="productos">
 <head>
     <meta charset="utf-8" />
     <title>Tienda Virtual</title>
@@ -13,7 +13,7 @@
 
     <div id="id01" class="modal">
 
-        <form class="modal-content animate"><!--action="/action_page.php">-->
+        <form class="modal-content animate">
             <div class="imgcontainer">
                 <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
             </div>
@@ -22,13 +22,10 @@
                 <label for="uname"><b>Mail</b></label>
                 <input type="text" placeholder="Ingrese mail" ng-model="mail"/>
 
-                <label for="psw"><b>Contraseña</b></label>
-                <input type="password" placeholder="Ingrese contraseña" ng-model="contrasenia"/>
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Ingrese contraseña" ng-model="password"/>
 
-                <button type="submit" ng-controller="LoginController" ng-click="Login()">Ingresar</button>
-                <!--<label>
-                    <input type="checkbox" checked="checked" name="remember"> Remember me
-                </label>-->
+                <button type="submit" ng-controller="LoginController" ng-click="Login()">Ingresar {{respuesta}}</button>
             </div>
 
             <div class="container" style="background-color:#f1f1f1">
@@ -37,10 +34,6 @@
         </form>
     </div>
 
-    <!--<div ng-controller="LoginController">
-        <p class="login" ng-click="">Ingresar</p>
-        <p class="login" ng-click="">Registrarse</p>
-    </div>-->
     <div ng-controller="ProductosController">
         <h1 id="titulo" class="center">Tienda Virtual</h1>
         <div id="producto" ng-repeat="producto in productos1">
