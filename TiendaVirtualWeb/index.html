@@ -68,7 +68,7 @@
         <div id="producto" ng-repeat="producto in productos1">
             <h1 class="center">{{producto.Nombre}}</h1>
             <h2 id="descripcion">{{producto.Descripcion}}</h2>
-            <div><img class="center" src="https://upload.wikimedia.org/wikipedia/commons/d/da/Imagen_no_disponible.svg" alt="Imagen no disponible" height="150" width="150"></div>
+            <div ng-init="ruta='http://35.185.15.6/Sitio/img/'"><img class="center" src={{ruta}}{{producto.Foto}} alt="Imagen no encontrada" height="150" width="150"></div>
             <p id="precio" class="center">Precio: ${{producto.Precio}}</p>
             <button class="center" type="button">Comprar</button>
         </div>
