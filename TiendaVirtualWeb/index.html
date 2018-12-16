@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html ng-app="productos">
+<html ng-app="productos" ng-init="id=0">
 <head>
     <meta charset="utf-8" />
     <title>Tienda Virtual</title>
@@ -9,7 +9,9 @@
 
     <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Ingresar</button>
 
-     <div id="id01" class="modal">
+    <p>Id:{{id}}</p>
+
+    <div id="id01" class="modal">
 
         <form class="modal-content animate">
             <div class="imgcontainer">
@@ -23,11 +25,11 @@
                 <label for="psw"><b>Password</b></label>
                 <input type="password" placeholder="Ingrese contraseña" ng-model="password" />
 
-                <button type="submit" ng-controller="LoginController" ng-click="Login()">Ingresar</button>
+                <button type="submit" ng-controller="LoginController" ng-click="Login()">Ingresar {{respuesta}}</button>
             </div>
 
             <div class="container" style="background-color:#f1f1f1">
-                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancelar</button>
+                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
             </div>
         </form>
     </div>
@@ -51,8 +53,17 @@
                 <label for="clinom"><b>Cliente Nombre</b></label>
                 <input type="text" placeholder="Ingrese el nombre del cliente" ng-model="clinombre" />
 
-                <label for="clinom"><b>Tipo Cliente</b></label>
-                <input type="text" placeholder="Ingrese el tipo del cliente" ng-model="clitipo" />
+                <label for="clici"><b>Cliente Cédula</b></label>
+                <input type="text" placeholder="Ingrese la CI cliente" ng-model="clicedula" />
+
+                <!--<label for="clitip"><b>Tipo Cliente</b></label>
+    <input type="text" placeholder="Ingrese el tipo del cliente" ng-model="clitipo" />-->
+
+                <label for="clidir"><b>Dirección</b></label>
+                <input type="text" placeholder="Ingrese dirección del cliente" ng-model="clidireccion" />
+
+                <label for="clitel"><b>Teléfono</b></label>
+                <input type="text" placeholder="Ingrese teléfono del cliente" ng-model="clitelefono" />
 
                 <button type="submit" ng-controller="RegistroController" ng-click="Register()">Registrarse</button>
             </div>
@@ -70,7 +81,7 @@
             <h2 id="descripcion">{{producto.Descripcion}}</h2>
             <div ng-init="ruta='http://35.185.15.6/Sitio/img/'"><img class="center" src={{ruta}}{{producto.Foto}} alt="Imagen no encontrada" height="150" width="150"></div>
             <p id="precio" class="center">Precio: ${{producto.Precio}}</p>
-            <button class="center" type="button">Comprar</button>
+            <button ng-hide="id==0" class="center" type="button">Comprar</button>
         </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
