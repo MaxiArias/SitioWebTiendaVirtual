@@ -9,9 +9,7 @@
 
     <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Ingresar</button>
 
-    <p>Id:{{id}}</p>
-
-    <div id="id01" class="modal">
+     <div id="id01" class="modal">
 
         <form class="modal-content animate">
             <div class="imgcontainer">
@@ -25,11 +23,11 @@
                 <label for="psw"><b>Password</b></label>
                 <input type="password" placeholder="Ingrese contraseña" ng-model="password" />
 
-                <button type="submit" ng-controller="LoginController" ng-click="Login()">Ingresar {{respuesta}}</button>
+                <button type="submit" ng-controller="LoginController" ng-click="Login()">Ingresar</button>
             </div>
 
             <div class="container" style="background-color:#f1f1f1">
-                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancelar</button>
             </div>
         </form>
     </div>
@@ -51,16 +49,16 @@
                 <input type="password" placeholder="Ingrese contraseña" ng-model="password" />
 
                 <label for="clinom"><b>Cliente Nombre</b></label>
-                <input type="clinombre" placeholder="Ingrese el nombre del cliente" ng-model="clinombre" />
+                <input type="text" placeholder="Ingrese el nombre del cliente" ng-model="clinombre" />
 
-                <label for="clinom"><b>Cliente Nombre</b></label>
-                <input type="clinombre" placeholder="Ingrese el nombre del cliente" ng-model="clinombre" />
+                <label for="clinom"><b>Tipo Cliente</b></label>
+                <input type="text" placeholder="Ingrese el tipo del cliente" ng-model="clitipo" />
 
-                <button type="submit" ng-controller="LoginController" ng-click="Login()">Ingresar {{respuesta}}</button>
+                <button type="submit" ng-controller="RegistroController" ng-click="Register()">Registrarse</button>
             </div>
 
             <div class="container" style="background-color:#f1f1f1">
-                <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+                <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancelar</button>
             </div>
         </form>
     </div>

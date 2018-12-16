@@ -22,9 +22,9 @@
         }
     });
 
-    app.controller("ClienteController", function ($scope, $rootScope, $http) {
-        $scope.Login = function () {
-            var parameter = JSON.stringify({ mail: $scope.mail, password: $scope.password });
+    app.controller("RegistroController", function ($scope, $rootScope, $http) {
+        $scope.Register = function () {
+            var parameter = JSON.stringify({ mail: $scope.mail, password: $scope.password }, );
             $http.post("http://35.185.15.6/WebApi/api/Cliente", parameter).then(function successCallback(response) {
                 $rootScope.id = response.data;
                 modal.style.display = 'none';
