@@ -4,20 +4,49 @@
     <meta charset="utf-8" />
     <title>Tienda Virtual</title>
     <link rel="stylesheet" type="text/css" href="StyleSheet1.css" />
+
+    <script language="JavaScript" type="text/javascript">
+        function login(showhide) {
+            if (showhide == "show") {
+                document.getElementById('popupbox').style.visibility = "visible";
+            } else if (showhide == "hide") {
+                document.getElementById('popupbox').style.visibility = "hidden";
+            }
+        }
+    </script>
+
 </head>
-<body ng-controller="ProductoController as prod">
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body ng-controller="ProductosController">
     <p class="login" ng-click="">Ingresar</p>
     <p class="login" ng-click="">Registrarse</p>
     <h1 id="titulo" class="center">Tienda Virtual</h1>
-    <div id="producto" ng-repeat="producto in prod.productos">
+    <div id="producto" ng-repeat="producto in productos1">
         <h1 class="center">{{producto.Nombre}}</h1>
-        <h2 id="descripcion">{{[producto.Descripcion}}</h2>
+        <h2 id="descripcion">{{producto.Descripcion}}</h2>
         <div><img class="center" src="https://upload.wikimedia.org/wikipedia/commons/d/da/Imagen_no_disponible.svg" alt="Imagen no disponible" height="150" width="150"></div>
         <p id="precio" class="center">Precio: ${{producto.Precio}}</p>
         <button class="center" type="button">Comprar</button>
     </div>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <!--<script src="https://code.angularjs.org/2.0.0-beta.7/Rx.js"></script>-->
     <script type="text/javascript" src="/app.js"></script>
+
+    <div id="popupbox">
+        <form name="login" action="" method="post">
+            <center>Username:</center>
+            <center><input name="username" size="14" /></center>
+            <center>Password:</center>
+            <center><input name="password" type="password" size="14" /></center>
+            <center><input type="submit" name="submit" value="login" /></center>
+        </form>
+        <br />
+        <center><a href="javascript:login('hide');">close</a></center>
+    </div>
+
+    <p><a href="javascript:login('show');">login</a></p>
+
+
+
+
 </body>
 </html>
