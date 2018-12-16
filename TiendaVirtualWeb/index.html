@@ -20,16 +20,47 @@
 
             <div class="container">
                 <label for="uname"><b>Mail</b></label>
-                <input type="text" placeholder="Ingrese mail" ng-model="mail"/>
+                <input type="text" placeholder="Ingrese mail" ng-model="mail" />
 
                 <label for="psw"><b>Password</b></label>
-                <input type="password" placeholder="Ingrese contraseña" ng-model="password"/>
+                <input type="password" placeholder="Ingrese contraseña" ng-model="password" />
 
                 <button type="submit" ng-controller="LoginController" ng-click="Login()">Ingresar {{respuesta}}</button>
             </div>
 
             <div class="container" style="background-color:#f1f1f1">
                 <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+            </div>
+        </form>
+    </div>
+
+    <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Registrarse</button>
+
+    <div id="id02" class="modal">
+
+        <form class="modal-content animate">
+            <div class="imgcontainer">
+                <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+            </div>
+
+            <div class="container">
+                <label for="uname"><b>Mail</b></label>
+                <input type="text" placeholder="Ingrese mail" ng-model="mail" />
+
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Ingrese contraseña" ng-model="password" />
+
+                <label for="clinom"><b>Cliente Nombre</b></label>
+                <input type="clinombre" placeholder="Ingrese el nombre del cliente" ng-model="clinombre" />
+
+                <label for="clinom"><b>Cliente Nombre</b></label>
+                <input type="clinombre" placeholder="Ingrese el nombre del cliente" ng-model="clinombre" />
+
+                <button type="submit" ng-controller="LoginController" ng-click="Login()">Ingresar {{respuesta}}</button>
+            </div>
+
+            <div class="container" style="background-color:#f1f1f1">
+                <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
             </div>
         </form>
     </div>
