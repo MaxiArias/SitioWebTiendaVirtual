@@ -22,10 +22,11 @@
         }
     });
 
-    app.controller("ClienteController", function ($scope, $rootScope, $http) {
-        $scope.Login = function () {
-            var parameter = JSON.stringify({ mail: $scope.mail, password: $scope.password });
-            $http.post("http://35.185.15.6/WebApi/api/Cliente", parameter).then(function successCallback(response) {
+    app.controller("RegistroController", function ($scope, $rootScope, $http) {
+        $scope.Register = function () {
+            var parameter = JSON.stringify({ Email: $scope.mail, Password: $scope.password, Nombre: $scope.clinombre, Direccion: $scope.clidireccion, Telefono: $scope.clitelefono, TipoCliente: "Persona", Activo: true, Cedula: $scope.Cedula, TipoUsuario:"cliente" });
+            //$http.post("http://35.185.15.6/WebApi/api/Cliente/Persona", parameter).then(function successCallback(response) {
+            $http.post("http://localhost:49559//api/Cliente/Persona", parameter).then(function successCallback(response) {
                 $rootScope.id = response.data;
                 modal.style.display = 'none';
             }, function errorCallback(response) {
