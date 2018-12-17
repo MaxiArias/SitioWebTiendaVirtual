@@ -7,9 +7,7 @@
 </head>
 <body>
 
-    <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Ingresar</button>
-
-    <p>Id:{{id}}</p>
+    <button ng-show="id==0" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Ingresar</button>
 
     <div id="id01" class="modal">
 
@@ -25,7 +23,7 @@
                 <label for="psw"><b>Password</b></label>
                 <input type="password" placeholder="Ingrese contraseña" ng-model="password" />
 
-                <button type="submit" ng-controller="LoginController" ng-click="Login()">Ingresar {{respuesta}}</button>
+                <button type="submit" ng-controller="LoginController" ng-click="Login()">Ingresar</button>
             </div>
 
             <div class="container" style="background-color:#f1f1f1">
@@ -34,7 +32,7 @@
         </form>
     </div>
 
-    <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Registrarse</button>
+    <button ng-show="id==0" onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Registrarse</button>
 
     <div id="id02" class="modal">
 
@@ -56,9 +54,6 @@
                 <label for="clici"><b>Cliente Cédula</b></label>
                 <input type="text" placeholder="Ingrese la CI cliente" ng-model="clicedula" />
 
-                <!--<label for="clitip"><b>Tipo Cliente</b></label>
-    <input type="text" placeholder="Ingrese el tipo del cliente" ng-model="clitipo" />-->
-
                 <label for="clidir"><b>Dirección</b></label>
                 <input type="text" placeholder="Ingrese dirección del cliente" ng-model="clidireccion" />
 
@@ -75,6 +70,7 @@
     </div>
 
     <div ng-controller="ProductosController">
+        <button ng-hide="id==0" ng-click="Salir()" style="width:auto;">Salir</button>
         <h1 id="titulo" class="center">Tienda Virtual</h1>
         <div id="producto" ng-repeat="producto in productos1">
             <h1 class="center">{{producto.Nombre}}</h1>
