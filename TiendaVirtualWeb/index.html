@@ -77,7 +77,9 @@
             <h2 id="descripcion">{{producto.Descripcion}}</h2>
             <div ng-init="ruta='http://35.185.15.6/Sitio/img/'"><img class="center" src={{ruta}}{{producto.Foto}} alt="Imagen no encontrada" height="150" width="150"></div>
             <p id="precio" class="center">Precio: ${{producto.Precio}}</p>
-            <button ng-hide="id==0" class="center" type="button">Comprar</button>
+            <p>Codigo: {{producto.IdProducto}}</p>
+            <input name="idprod" value={{producto.IdProducto}} ng-model="idprod"/>
+            <button ng-hide="id==0" ng-controller="ComprarController" ng-click="Comprar()" class="center" type="button">Comprar</button>
         </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>

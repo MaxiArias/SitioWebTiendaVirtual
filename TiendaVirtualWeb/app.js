@@ -12,6 +12,7 @@
         $scope.Salir = function () {
             $rootScope.id = 0;
         }
+
     });
 
     app.controller("LoginController", function ($scope, $rootScope, $http) {
@@ -39,11 +40,11 @@
         }
     });
 
-    //app.controller("SalirController", function ($rootScope) {
-    //    $scope.Salir = function () {
-    //        $rootScope.id = 0;
-    //    }
-    //});
+    app.controller("ComprarController", function ($scope, $http, $document) {
+        $scope.Comprar = function () {
+            alert($scope.idprod);
+        }
+    });
 
 })();
 
