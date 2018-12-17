@@ -40,11 +40,11 @@
         }
     });
 
-    app.controller("ComprarController", function ($scope, $http, $document) {
-        $scope.Comprar = function () {
-            alert($scope.idprod);
-        }
-    });
+    //app.controller("ComprarController", function ($scope, $http, $document) {
+    //    $scope.Comprar = function () {
+    //        alert($scope.idprod);
+    //    }
+    //});
 
 })();
 
